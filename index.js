@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 6000;
+const port = 4000;
 
 
-
+// arrow function
 //app.listen (port,(err)=>{
 app.listen (port,function(err){  
 if(err){
