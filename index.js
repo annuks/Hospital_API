@@ -1,10 +1,20 @@
 const express = require('express');
 const app = express();
-const port = 4000;
+const port = 8000;
 
 
-// arrow function
-//app.listen (port,(err)=>{
+
+
+
+//Setting Route folder to use routes
+app.use('/',require('./routes'));
+
+
+app.use('*',(req,res)=>{
+    res.send("Error !! No such Planet found");
+});
+
+// Starting the Server
 app.listen (port,function(err){  
 if(err){
         console.log("Error in Running Server");
