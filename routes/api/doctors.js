@@ -6,10 +6,10 @@ const router = express.Router();
 const doctorsController = require('../../controllers/api/doctorsController')
 
 
-// calling   doctors controller
-router.get('/doctors',(req,res)=>{
-    res.send("Hi From Route/Doctors");
-})
+// // calling   doctors 
+// router.get('/doctors',(req,res)=>{
+//     res.send("Hi From Route/Doctors");
+// })
 
-// router for doctor registartion
-router.post("/doctors/registration", doctorsController.registerDoctor);
+// router for doctor registartion Controller
+router.post("/doctors/register", doctorsController.registerDoctor);
