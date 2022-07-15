@@ -1,7 +1,7 @@
 Hospital API
 
-Start of the Project 
+## Start of the Project 
 
-Setup of Express Express Server
+## `1. Setup of Express Express Server
 
-Setup of Route and Controller Structure 
+## `2. Setup of Route and Controller Structure 

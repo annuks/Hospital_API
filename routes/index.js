@@ -1,25 +1,16 @@
+//Calling the Express Server and Fetching Router
 const express = require('express');
 const router = express.Router();
 
-
-
-
-
-// Getting doctors Contrller
-router.get('/doctors',(req,res)=>{
-    res.send("Hey From Route/Doctors");
+//Refering data for Home Page
+router.get('/',(req, res) => {
+    res.send("<h1 style='color:orange'><marquee>Hospital API</h1>")
 })
 
 
-// Getting patients Contrller
-router.get('/patients',(req,res)=>{
-    res.send("Hey From Route/Patients");
-})
-
-
-
-
-
+//Creating Middleware
+// router.use('./api',require ('./api/doctors'));
+// router.use('./api',require('./api/patients'))
 
 
 module.exports = router;

@@ -10,8 +10,9 @@ const port = 8000;
 app.use('/',require('./routes'));
 
 
+
 app.use('*',(req,res)=>{
-    res.send("Error !! No such Planet found");
+    res.send("Error !! No such Pages");
 });
 
 // Starting the Server
