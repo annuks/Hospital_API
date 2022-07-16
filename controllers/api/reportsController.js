@@ -1,26 +1,38 @@
-const Reports = require("../../models/reports");
+const Report = require("../../models/report");
 
 module.exports.reportsStatus = async (req, res) => {
     try{
-        let reports = await Reports.find({
-            pateintsName: req.body.pateintsName,
-            phoneNo:req.body.phoneNo,
-            testStatus:req.body.testStatus,
-            doctorName:req.body.doctorName,
-        });
+        const reports = await Report.find({status:req.params.status}).populate('patient').populate('doctor');
+        
+        let all_reports = [];
+        for(val of reports){
+            let value = {};
+            value.patient_name = val.patient.name;
+            value.patient_phone = val.patient.phone;
+            value.doctor = val.doctor.name;
 
+            all_reports.push(value);
+        }
 
-        return res.json(200, {
-            message: 'Reports Generated Succesfully',
-            data:  {
-                reports: {
-                   name:reports.pateintsName,
-                    testResults:reports.testResult,
-                    phoneNo:reports.phoneNo,
-                    doctorName:reports.doctorName,
+        if(reports){
+            return res.json(200,{
+                message:'All Reports Associated to Status',
+                success:true,
+                data : {
+                    status : req.params.status,
+                    reports:all_reports
                 }
-            }
-        })
+            })
+        }
+        else{
+            return res.json(200,{
+                message:'Fsiled to Showing Test Result',
+                success:false,
+             
+            })
+        }
+
+
 
     }catch(err){
         console.log('********', err);
