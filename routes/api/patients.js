@@ -12,9 +12,9 @@ const patientsController = require('../../controllers/api/patientsController');
 router.post("/register",passport.authenticate('jwt',{session:false}),patientsController.registerPatient);
 
 // router for patient report Controller
-router.post("/create_report", patientsController.create_Report);
+router.post("/:id/create_report",passport.authenticate('jwt',{session:false}), patientsController.create_Report);
 // router for patients All reports Controller
-router.post("/all_report", patientsController.all_Report);
+router.get("/:id/all_report", patientsController.all_Report);
 
 
 

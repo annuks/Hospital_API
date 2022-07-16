@@ -5,3 +5,8 @@ const router = express.Router();
 
 // router for reports status Controller
 router.post("/reports/status",reportsController.reportsStatus);
+
+
+
+
+module.exports.router;

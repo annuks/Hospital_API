@@ -54,7 +54,7 @@ module.exports.loginDoctor = async function (req, res) {
       message: "Sign In Succesfull, Here is your Token",
       success: true,
       data: {
-        token: jwt.sign(doctors.toJSON(), "hospitalapi", { expiresIn: "10000" }),
+        token: jwt.sign(doctors.toJSON(), "hospitalapi", { expiresIn: "1000000" }),
       },
     });
   } catch (err) {
