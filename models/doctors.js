@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
-const doctorsSchecma = mongoose.Schema(
+const doctorsSchema = mongoose.Schema(
   {
     email: {
-      type:email,
+      type:String,
       required: true,
+      unique: true
     },
     password: {
       type: String,

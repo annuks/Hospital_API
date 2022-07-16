@@ -1,24 +1,19 @@
 const mongoose = require("mongoose");
 
-const patientsSchecma = mongoose.Schema(
+const patientsSchema = mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
     },
-    phoneNo: {
+    phone: {
       type: Number,
       required: true,
     },
-    testStatus: {
-      type:String,
-      required:true,
-    },
-    doctorName: {
-        type:String,
-        required:true,
-      },
-      
+    doctor: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref : 'Doctors'
+    }
   },
   {
     timestamps: true,

@@ -3,12 +3,16 @@ const app = express();
 const port = 8000;
 const db = require('./config/mongoose');
 
-
+const passport = require("passport");
+const passportJWT =require ("./config/passport-jwt-strategy");
 
 
 app.use(express.urlencoded());
 //Setting Route folder to use routes
-//app.use('/',require('./routes'));
+app.use(passport.initialize());
+
+app.use('/',require('./routes'));
+
 
 
 

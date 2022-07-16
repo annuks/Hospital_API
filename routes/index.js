@@ -8,9 +8,10 @@ router.get('/',(req, res) => {
 })
 
 
+
 //Creating Middleware
-// router.use('./api',require ('./api/doctors'));
-// router.use('./api',require('./api/patients'))
+// router.get('/',doctorsController.registerDoctor);
+router.use('/api',require('./api'))
 
 
 module.exports = router;

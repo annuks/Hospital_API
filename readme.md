@@ -6,4 +6,6 @@ Hospital API
 
 ## `2. Setup of Route and Controller Structure 
 
-## 3. Setup Moongoose and Schema 
+## 3. Setup Moongoose and Schema
+
+## 4. Setup respecative Controllers for the API
