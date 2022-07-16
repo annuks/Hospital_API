@@ -1,4 +1,6 @@
+//using patients schema from model
 const Patients = require("../../models/patients");
+//using reports schema from model
 const Report = require("../../models/report");
 
 //Controller for patient registration

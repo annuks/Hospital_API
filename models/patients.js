@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+//creating schema for patients
 const patientsSchema = mongoose.Schema(
   {
     name: {

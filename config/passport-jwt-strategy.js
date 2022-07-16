@@ -1,8 +1,10 @@
 const passport = require("passport");
+//using java web token for authorisation 
 const JWTStrategy =require ("passport-jwt").Strategy;
 const ExtractJWT = require("passport-jwt").ExtractJwt;
+//calling doctors schema  from models
 const Doctors = require ('../models/doctors');
-
+//authorising for generating token
 let opts = {
     jwtFromRequest:ExtractJWT.fromAuthHeaderAsBearerToken(),
     secretOrKey:'hospitalapi',

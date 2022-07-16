@@ -1,4 +1,6 @@
+//using doctors schema from model
 const Doctors = require("../../models/doctors");
+//using jwt for login authentication
 const jwt = require("jsonwebtoken");
 
 // controllers for doctor registration
@@ -37,7 +39,7 @@ module.exports.registerDoctor = async (req, res) => {
     });
   }
 };
-
+//controller for login as doctor
 //Usig json web token to authentication
 
 module.exports.loginDoctor = async function (req, res) {

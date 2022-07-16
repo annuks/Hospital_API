@@ -9,7 +9,7 @@ router.get('/',(req, res) => {
 
 
 
-//Creating Middleware
+
 // router.get('/',doctorsController.registerDoctor);
 router.use('/api',require('./api'))
 

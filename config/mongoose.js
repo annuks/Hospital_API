@@ -1,3 +1,4 @@
+//usig mongoose as database 
 const mongoose =require('mongoose');
 
 //connection between mongoose and mongodb

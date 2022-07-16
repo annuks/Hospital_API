@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-
+//index of routers for further route
 router.use('/doctors',require('./doctors'));
 router.use('/patients',require('./patients'));
 router.use('/reports',require('./reports'));

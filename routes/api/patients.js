@@ -5,15 +5,16 @@ const passport = require('passport')
 
 
 const patientsController = require('../../controllers/api/patientsController');
-// ,passport.authenticate('jwt')
 
 
-// router for patient registartion Controller
+
+// router for patient registartion 
+//authenticating , whether user is logged in or not
 router.post("/register",passport.authenticate('jwt',{session:false}),patientsController.registerPatient);
 
-// router for patient report Controller
+// router for creating patient report Controller
 router.post("/:id/create_report",passport.authenticate('jwt',{session:false}), patientsController.create_Report);
-// router for patients All reports Controller
+// router for creating patients All reports Controller
 router.get("/:id/all_report", patientsController.all_Report);
 
 

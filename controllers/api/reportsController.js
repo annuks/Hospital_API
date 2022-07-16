@@ -1,9 +1,10 @@
+//using reports schema from model
 const Report = require("../../models/report");
-
+// controller for generating test status of patients
 module.exports.reportsStatus = async (req, res) => {
     try{
         const reports = await Report.find({status:req.params.status}).populate('patient').populate('doctor');
-        
+        //filtering which data to shown on report
         let all_reports = [];
         for(val of reports){
             let value = {};
@@ -16,7 +17,7 @@ module.exports.reportsStatus = async (req, res) => {
 
         if(reports){
             return res.json(200,{
-                message:'All Reports Associated to Status',
+                message:'Showing All Reports Associated to Result Status',
                 success:true,
                 data : {
                     status : req.params.status,
@@ -26,7 +27,7 @@ module.exports.reportsStatus = async (req, res) => {
         }
         else{
             return res.json(200,{
-                message:'Fsiled to Showing Test Result',
+                message:'Failed to Showing Test Result',
                 success:false,
              
             })
