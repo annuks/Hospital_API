@@ -21,7 +21,7 @@ app.use('*',(req,res)=>{
 });
 
 // Starting the Server
-app.listen (port,function(err){  
+app.listen (process.env.PORT,function(err){  
 if(err){
         console.log("Error in Running Server");
         return;
