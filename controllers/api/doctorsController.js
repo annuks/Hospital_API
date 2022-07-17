@@ -15,7 +15,7 @@ module.exports.registerDoctor = async (req, res) => {
     } else {
       if (req.body.password !== req.body.c_password) {
         return res.json(500, {
-          message: "Password and Confirm Password Not Sae",
+          message: "Password and Confirm Password are not Same",
           success: false,
         });
       }
@@ -28,6 +28,7 @@ module.exports.registerDoctor = async (req, res) => {
           doctor: {
             email: doctor.email,
             id: doctor._id,
+            name:doctor.name,
           },
         },
       });
@@ -44,14 +45,15 @@ module.exports.registerDoctor = async (req, res) => {
 
 module.exports.loginDoctor = async function (req, res) {
   try {
+    //if login details is invalid
     let doctors = await Doctors.findOne({ email: req.body.email });
     if (!doctors || doctors.password != req.body.password) {
       return res.json(422, {
-        message: "Invalid User/Password",
+        message: "Invalid Username/Password",
         success : false
       });
     }
-
+// if login details are correct
     return res.json(200, {
       message: "Sign In Succesfull, Here is your Token",
       success: true,

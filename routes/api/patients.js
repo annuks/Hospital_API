@@ -15,7 +15,7 @@ router.post("/register",passport.authenticate('jwt',{session:false}),patientsCon
 // router for creating patient report Controller
 router.post("/:id/create_report",passport.authenticate('jwt',{session:false}), patientsController.create_Report);
 // router for creating patients All reports Controller
-router.get("/:id/all_report", patientsController.all_Report);
+router.get("/:id/all_reports", patientsController.all_Report);
 
 
 
