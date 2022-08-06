@@ -1,17 +1,17 @@
 # Hospital API
+ ### Project Description
+ 
+ #### API for Hospital management, where a Doctor can register patients after authorization, using mobile no. as unique identity.Doctors can create reports for patients and also can view the status of reports. 
+Tech Stacks: HTML, Node JS, MongoDB.
 
-## Start of the Project 
-url: localhost://8000
-```
- 1. Setup of Express Express Server.
- 2. Setup of Route and Controller Structure.
- 3. Setup Moongoose and Schema.
- 4. Setup respecative Controllers for the API.
- 5. Setup Model and Mongoose Connection.
- 6. Created API for registering and login Doctor.
- 7. Created API for registering Patients and creating_report by ID.
- 8. Created API for showing All Reports of Patients sorted oldest to newest.
- 9. Created API for showing all the patients by specific Status.
- 10.Using Postman to process API requests. 
-```
-## End of the  Project
+#### (User Guide)
+[http://localhost:8000/api/]
+#### 1 For Doctor Registartion use in POSTMAN as POST request [/doctors/register] route and need to pass data in "x-www-urlencoded".
+#### 2 For Login as Doctor , in POSTMAN use POST request [/doctors/login] route and need to pass data in "www-urlencoded" section.
+####  3 For Patients Registartion in POSTMAN as POST request [/patients/register] route and need to pass token in "Header" and name,phone in "x-www-urlencoded"
+####  4 For Patients Reports Creation in POSTMAN as POST request [/patients/:id/create_report] route and need to pass data in "x-www-urlencoded".
+####     (Give Patient ID in url and Doctor ID as Bearer token in Header)
+####  5 For Viewing Patients Reports (oldest to new), in POSTMAN as POST request [/patients/:id/all_reports] route and need to pass data in "x-www-urlencoded".
+####  6 For getting All Reports Status use in POSTMAN as GET request [/patients/:status] route and need to pass data in "params" section.
+
+##### This Projectn can be accessed from  https://hospitals-api-project.herokuapp.com/
